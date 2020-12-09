@@ -6,7 +6,7 @@ import os
 
 
 try:
-    with open('/home/pi/projet/projet_actif/medias','rb') as fichier:
+    with open('/home/pi/SonoPi/medias','rb') as fichier:
         mes_albums = pickle.load(fichier)
         print("mediatheque chargée")
 except:
