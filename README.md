@@ -25,3 +25,5 @@ sudo python3 setup.py install
  
  
  sudo mv /home/pi/SonoPi/musique.service /etc/systemd/system/musique.service
+ sudo systemctl start musique.service
+ ok ---- sudo systemctl enable musique.service
