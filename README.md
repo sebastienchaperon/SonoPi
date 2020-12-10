@@ -1,12 +1,20 @@
 # SonoPi alpha
 Lecture de fichiers audio localement stocké sur un raspberry en fonction d'un tag NFC. 
-Matériel nécessaire :
+
+-Matériel nécessaire :
+
 Raspberry pi 3 ou + connecté au réseau 
+
 2020-08-20-raspios-buster-armhf-full
+
 Penser à activer le SPI dans raspi-config->interfaces
+
 3 LED
+
 5 boutons poussoir
+
 MFRC522
+
 Plan de câblage dans le git
 
 L'interface graphique est inutile donc vous pouvez booster directement en console
@@ -21,7 +29,7 @@ sudo python3 setup.py install
 
 git clone https://github.com/sebastienchaperon/SonoPi.git
  
-Envoyer les fichiers en FTP dans /home/pi/Music/*artiste*/*album*/
+Envoyer les fichiers en FTP dans /home/pi/Music/---artiste---/---album---/
 Le répertoire ne doit contenir que des fichiers audio. 
 
 cd SonoPi
