@@ -8,15 +8,15 @@ import RPi.GPIO as GPIO
 import time
 
 pinBtnStop = 37
-pinBtnPause = 29
 pinBtnPlay = 31
 pinBtnAvance = 33
 pinBtnRecule = 35
 
+etat_pp = True
+
 GPIO.setmode(GPIO.BOARD)
 GPIO.setwarnings(False)
 GPIO.setup(pinBtnStop, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
-GPIO.setup(pinBtnPause, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 GPIO.setup(pinBtnPlay, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 GPIO.setup(pinBtnAvance, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 GPIO.setup(pinBtnRecule, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
@@ -90,19 +90,19 @@ try:
             GPIO.output(LED_r, GPIO.HIGH)
             GPIO.output(LED_b, GPIO.LOW)
                 
-
-        etat_btn_pause = GPIO.input(pinBtnPause)
-
-        if (etat_btn_pause == True):
-            
-            son.pause()
         
             
         etat_btn_play = GPIO.input(pinBtnPlay)
 
         if (etat_btn_play == True):
-            
-            son.unpause()
+            if (etat_pp == True):
+                son.pause()
+                time.sleep(.5)
+                etat_pp = False
+            elif (etat_pp == False):
+                son.unpause()
+                time.sleep(.5)
+                etat_pp = True
 
         etat_btn_avance = GPIO.input(pinBtnAvance)
 
