@@ -11,11 +11,11 @@ Penser à activer le SPI dans raspi-config->interfaces
 
 3 LED
 
-5 boutons poussoir
+4 boutons poussoir
 
 MFRC522
 
-Plan de câblage dans le git
+Plan de câblage dans le git (bouton pause à supprimer)
 
 L'interface graphique est inutile donc vous pouvez booster directement en console
 
